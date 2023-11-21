@@ -33,10 +33,16 @@ const AddPizzaForm: FC<AddPizzaProps> = ({ addPizza }) => {
 
     const { title, price, img } = newPizza;
 
-    if (title && price && img) {
-      const data = { title, price: Number(price), img, id: Date.now() };
+    if (title.trim() && price.trim() && img.trim()) {
+      const urlPattern =
+        /^(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/)?[a-z0-9]+([-.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$/;
 
-      addPizza(data);
+      if (urlPattern.test(img)) {
+        const data = { title, price: Number(price), img, id: Date.now() };
+        addPizza(data);
+      } else {
+        alert("The link must start with the prefix http or https!");
+      }
     } else {
       alert("Fill in all fields ");
     }

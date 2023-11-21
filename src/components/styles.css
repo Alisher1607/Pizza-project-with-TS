@@ -40,7 +40,7 @@ form button {
 }
 
 button,
-input[type=submit] {
+input[type="submit"] {
   text-transform: uppercase;
   padding: 8px 15px;
   border: none;
@@ -54,12 +54,13 @@ input[type=submit] {
 .pizza {
   background: white;
   border: 1px solid #ededed;
-  box-shadow: 0 12px 24px 0 rgba(0,0,0,0.09);
+  box-shadow: 0 12px 24px 0 rgba(0, 0, 0, 0.09);
   position: relative;
   display: flex;
   flex-direction: column;
   padding: 12px;
   margin-bottom: 22px;
+  width: fit-content;
 }
 
 .pizza img {
@@ -151,7 +152,7 @@ input[type=submit] {
 
 .pagination .disabled {
   pointer-events: none;
-  color:#f2f2f2;
+  color: #f2f2f2;
 }
 
 /* Страница каждой пиццы */
